@@ -1,0 +1,86 @@
+# LUZ PISCANDO 
+void setup() {
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  for (int x=0; x<3; x++) {
+    digitalWrite(13, HIGH);
+    delay(250);
+    digitalWrite(13, LOW);
+    delay(200);
+  }
+  delay(400);
+  for (int x=0; x<3; x++) {
+    digitalWrite(13, HIGH);
+    delay(500);
+    digitalWrite(13, LOW);
+    delay(200);
+  }
+  delay(400);
+  for (int x=0; x<3; x++) {
+    digitalWrite(13, HIGH);
+    delay(250);
+    digitalWrite(13, LOW);
+    delay(200);
+  }
+  delay(5000);
+}
+####################################################
+# SEMÁFORO 
+void setup() {
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(8, OUTPUT);
+}
+
+void loop() {
+    digitalWrite(10, 0);
+    digitalWrite(9, 0);
+    digitalWrite(8, 1);
+    delay(1500);
+    digitalWrite(10, 0);
+    digitalWrite(9, 1);
+    digitalWrite(8, 0);
+    delay(1000);
+    digitalWrite(10, 1);
+    digitalWrite(9, 0);
+    digitalWrite(8, 0);
+    delay(2500);
+}
+
+######################################################
+# FAROL COM BOTÃO 
+void setup() {
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(7, OUTPUT);
+  pinMode(6, OUTPUT);
+  pinMode(2, INPUT);
+}
+
+void loop() {
+  if(digitalRead(2) == 1)
+    digitalWrite(10, 1);
+    digitalWrite(9, 0);
+    digitalWrite(8, 0);
+ } else {
+  //Pedrestre 
+  digitalWrite(7, 1);
+  digitalWrite(6, 0);
+  //Carros
+    digitalWrite(10, 0);
+    digitalWrite(9, 0);
+    digitalWrite(8, 1);
+    delay(1500);
+    digitalWrite(10, 0);
+    digitalWrite(9, 1);
+    digitalWrite(8, 0);
+    delay(1000);
+    digitalWrite(10, 1);
+    digitalWrite(9, 0);
+    digitalWrite(8, 0);
+    delay(2500);
+}
+
