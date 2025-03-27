@@ -1,0 +1,37 @@
+void setup() {
+  pinMode(10, OUTPUT);
+  pinMode(9, OUTPUT);
+  pinMode(8, OUTPUT);
+  pinMode(2, INPUT);
+  pinMode(7, OUTPUT);
+  pinMode(6, OUTPUT);
+}
+
+void loop() {
+  if ( digitalRead(2) == 1) {
+    digitalWrite(10, 1);
+    digitalWrite(9, 0);
+    digitalWrite(8, 0);
+    digitalWrite(7, 1); // vermelho Pedestre
+    digitalWrite(6, 0); // Verde Pedestre
+    delay(6000);
+  }
+  else {
+    // FECHAR O SEMAFORO DE PEDESTRE
+    digitalWrite(7, 0); // vermelho Pedestre
+    digitalWrite(6, 1); // Verde Pedestre
+    // CICLO DO SEMAFORO DO CARRO
+    digitalWrite(10, 0);
+    digitalWrite(9, 0);
+    digitalWrite(8, 1);
+    delay(1500);
+    digitalWrite(10, 0);
+    digitalWrite(9, 1);
+    digitalWrite(8, 0);
+    delay(500);
+    digitalWrite(10, 1);
+    digitalWrite(9, 0);
+    digitalWrite(8, 0);
+    delay(2000);
+  }
+}
