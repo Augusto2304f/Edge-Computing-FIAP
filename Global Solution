@@ -1,0 +1,53 @@
+Sensor de água 
+
+// Pinos do sensor ultrassônico
+const int trigPin = 9;
+const int echoPin = 10;
+
+// Pino do LED de alerta
+const int alertaPin = 7;
+
+// Variáveis para cálculos
+long duracao;
+float distancia;
+float nivelMaximo = 30.0; // Distância mínima (em cm) para considerar risco de enchente
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(trigPin, OUTPUT);
+  pinMode(echoPin, INPUT);
+  pinMode(alertaPin, OUTPUT);
+  
+  Serial.println("HydroGuard Solutions - Monitoramento de Nível de Água Iniciado");
+}
+
+void loop() {
+  // Envia pulso para o sensor
+  digitalWrite(trigPin, LOW);
+  delayMicroseconds(2);
+  
+  digitalWrite(trigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(trigPin, LOW);
+  
+  // Recebe sinal de volta
+  duracao = pulseIn(echoPin, HIGH);
+  
+  // Calcula a distância (em cm)
+  distancia = duracao * 0.0343 / 2;
+
+  // Exibe a distância no monitor serial
+  Serial.print("Distancia medida: ");
+  Serial.print(distancia);
+  Serial.println(" cm");
+
+  // Verifica o nível da água
+  if (distancia > nivelMaximo) {
+    Serial.println("🚨 ALERTA: Nível de água elevado! RISCO DE ENCHENTE!");
+    digitalWrite(alertaPin, HIGH); // Aciona buzzer ou LED
+  } else {
+    digitalWrite(alertaPin, LOW); // Desliga alerta
+  }
+
+  delay(1000); // Faz a leitura a cada 1 segundo
+}
