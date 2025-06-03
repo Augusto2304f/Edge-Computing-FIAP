@@ -57,3 +57,53 @@ void loop() {
 LINK 
 
 https://wokwi.com/projects/432336445306151937
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+README 
+
+
+🆘 Descrição do Problema
+As enchentes são um problema recorrente em diversas cidades, causando enormes prejuízos econômicos, sociais e ambientais. Elas resultam na perda de vidas, destruição de patrimônio, contaminação da água e desabrigamento de famílias.
+
+Os principais fatores que contribuem para esse problema incluem:
+
+Crescimento urbano desordenado;
+
+Ausência de monitoramento eficiente dos níveis de rios e canais;
+
+Falta de sistemas de alerta em tempo real;
+
+Deficiência no planejamento urbano com base em dados atualizados.
+
+🚀 Visão Geral da Solução
+A HydroGuard Solutions é uma plataforma inteligente de monitoramento de enchentes que combina sensores físicos, IoT e uma interface digital amigável para fornecer informações precisas e alertas em tempo real.
+
+🔧 Funcionalidades Principais:
+Monitoramento contínuo do nível da água;
+
+Alertas visuais e sonoros quando o nível excede o limite seguro;
+
+Interface web ou app com dados atualizados dos sensores;
+
+Histórico dos eventos e análise preditiva.
+
+🔥 Esquema do Projeto:
+
+Componentes Utilizados:
+
+Arduino Uno
+
+Sensor Ultrassônico HC-SR04
+
+LED para alerta visual
+
+Resistor 220Ω
+
+Protoboard
+
+Cabos jumpers
+
+🔗 Link para Simulação no Wokwi:
+https://wokwi.com/projects/432336445306151937
+
