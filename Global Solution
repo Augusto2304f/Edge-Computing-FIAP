@@ -20,7 +20,7 @@ void setup() {
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
   pinMode(alertaPin, OUTPUT);
-  
+
   Serial.println("HydroGuard Solutions - Monitoramento de Nível de Água Iniciado");
 }
 
@@ -28,14 +28,14 @@ void loop() {
   // Envia pulso para o sensor
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
-  
+
   digitalWrite(trigPin, HIGH);
   delayMicroseconds(10);
   digitalWrite(trigPin, LOW);
-  
+
   // Recebe sinal de volta
   duracao = pulseIn(echoPin, HIGH);
-  
+
   // Calcula a distância (em cm)
   distancia = duracao * 0.0343 / 2;
 
@@ -45,11 +45,11 @@ void loop() {
   Serial.println(" cm");
 
   // Verifica o nível da água
-  if (distancia > nivelMaximo) {
+  if (distancia < nivelMaximo) {
     Serial.println("🚨 ALERTA: Nível de água elevado! RISCO DE ENCHENTE!");
-    digitalWrite(alertaPin, HIGH); // Aciona buzzer ou LED
+    digitalWrite(alertaPin, HIGH); // Acende LED
   } else {
-    digitalWrite(alertaPin, LOW); // Desliga alerta
+    digitalWrite(alertaPin, LOW); // Desliga LED
   }
 
   delay(1000); // Faz a leitura a cada 1 segundo
@@ -107,5 +107,5 @@ Cabos jumpers
 
 
 🔗 LINK PARA SIMULAÇÃO NO WOKWI: 
-https://wokwi.com/projects/432336445306151937
+https://wokwi.com/projects/433048300732533761
 
